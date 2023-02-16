@@ -184,6 +184,5 @@ input[type="text"]:focus {
 }
 
 .hide {
-  transition: display 200ms;
-  display: none;
+  display: none !important;
 }
