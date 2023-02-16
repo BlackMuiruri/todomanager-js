@@ -19,17 +19,15 @@ addForm.addEventListener("submit", (event) => {
 
 tasks.addEventListener("click", (event) => {
   if (event.target.classList.contains("delete")) {
-    event.target.parentElement.remove();
-    updateMessage();
+    activateAnimation($(event.target.parentElement))
   }
 });
 
 clearAll.addEventListener("click", (event) => {
   const taskItems = tasks.querySelectorAll("li");
   taskItems.forEach((item) => {
-    item.remove();
+    activateAnimation($(item))
   });
-  updateMessage();
 });
 
 function updateMessage() {
@@ -67,3 +65,17 @@ searchForm.addEventListener("click", (event) => {
     filterTask(term);
   }
 });
+
+function activateAnimation(parent) {
+  let = backgroundcolor = "#E84A5F";
+  var tl = new TimelineMax();
+  tl.to(parent, 1, { backgroundColor: backgroundcolor, ease: Power4.easeOut })
+    .to(parent, 0.5, {
+      x: "-400px",
+      ease: Bounce.easeOut,
+    })
+    .call(() => {
+      parent[0].remove();
+      updateMessage();
+    });
+}
