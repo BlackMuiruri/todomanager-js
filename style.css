@@ -22,11 +22,7 @@ body {
 }
 
 .wrap {
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  display: block;
+  max-width: 540px;
   background-color: rgba(0, 0, 0, 0.15);
   min-height: 85vh;
   padding: 20px;
